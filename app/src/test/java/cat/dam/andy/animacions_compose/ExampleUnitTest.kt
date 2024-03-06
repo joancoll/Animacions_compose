@@ -1,4 +1,4 @@
-package cat.dam.andy.animacions
+package cat.dam.andy.animacions_compose
 
 import org.junit.Test
 

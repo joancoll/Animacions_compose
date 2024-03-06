@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "cat.dam.andy.animacions"
+    namespace = "cat.dam.andy.animacions_compose"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "cat.dam.andy.animacions"
+        applicationId = "cat.dam.andy.animacions_compose"
         minSdk = 28
         targetSdk = 34
         versionCode = 1

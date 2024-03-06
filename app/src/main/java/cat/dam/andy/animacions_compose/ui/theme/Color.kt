@@ -1,4 +1,4 @@
-package cat.dam.andy.animacions.ui.theme
+package cat.dam.andy.animacions_compose.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
