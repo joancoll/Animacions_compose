@@ -75,7 +75,7 @@ fun AnimationsContent(padding: PaddingValues) {
     var isMosquitoClicked by remember { mutableStateOf(false) }
     var isBall1Clicked by remember { mutableStateOf(false) }
     var isBall2Clicked by remember { mutableStateOf(false) }
-    var isBall3Clicked by remember { mutableStateOf(false) }
+    var isBall3Started by remember { mutableStateOf(false) }
     var isBall4Clicked by remember { mutableStateOf(false) }
     var isEgg1Clicked by remember { mutableStateOf(false) }
     var isEgg2Clicked by remember { mutableStateOf(false) }
@@ -102,7 +102,7 @@ fun AnimationsContent(padding: PaddingValues) {
     )
 
     val ball3BounceAnimation by animateFloatAsState(
-        targetValue = if (isBall3Clicked) 1f else 0f,
+        targetValue = if (isBall3Started) 1f else 0f,
         animationSpec = infiniteRepeatable(
             animation = tween(durationMillis = 800),
             repeatMode = RepeatMode.Reverse
@@ -144,9 +144,9 @@ fun AnimationsContent(padding: PaddingValues) {
     )
 
     // Exemple per execució només d'inici sense premer botó (cal esperar en un fil nou)
-    LaunchedEffect(!isBall3Clicked) {
+    LaunchedEffect(!isBall3Started) {
         delay(500) // Retard per donar temps a la IU de renderitzar-se
-        isBall3Clicked = true
+        isBall3Started = true
     }
 
     Box(
@@ -206,9 +206,6 @@ fun AnimationsContent(padding: PaddingValues) {
                     translationY = ball3BounceAnimation * 50,
                     alpha = 1f
                 )
-                .clickable {
-                    isBall3Clicked = !isBall3Clicked
-                }
         )
 
         AnimatedImage(
