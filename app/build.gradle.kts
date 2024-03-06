@@ -59,6 +59,9 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+
+
+    
     //permet gestionar imatges carregades des de diferents fonts, com ara recursos, URL i arxius.
     implementation("io.coil-kt:coil-compose:2.5.0")
     testImplementation("junit:junit:4.13.2")

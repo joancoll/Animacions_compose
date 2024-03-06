@@ -22,6 +22,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -37,6 +38,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import cat.dam.andy.animacions_compose.ui.theme.AnimacionsComposeTheme
 import coil.compose.rememberAsyncImagePainter
+import kotlinx.coroutines.delay
 
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
@@ -141,6 +143,11 @@ fun AnimationsContent(padding: PaddingValues) {
         label = "egg fell down animation"
     )
 
+    // Exemple per execució només d'inici sense premer botó (cal esperar en un fil nou)
+    LaunchedEffect(!isBall3Clicked) {
+        delay(500) // Retard per donar temps a la IU de renderitzar-se
+        isBall3Clicked = true
+    }
 
     Box(
         modifier = Modifier.fillMaxSize(),
